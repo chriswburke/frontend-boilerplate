@@ -1,0 +1,84 @@
+{
+  "name": "frontend-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate for front end projects",
+  "watch": {
+    "sass": {
+      "patterns": [
+        "src/sass"
+      ],
+      "extensions": "sass,scss",
+      "quiet": false
+    },
+    "images": {
+      "patterns": [
+        "src/images"
+      ],
+      "extensions": "jpg,jpeg,png,svg,gif",
+      "quiet": false
+    },
+    "assemble": {
+      "patterns": [
+        "src/templates"
+      ],
+      "extensions": "hbs,json",
+      "quiet": false
+    }
+  },
+  "scripts": {
+    "build": "./bin/build.sh",
+    "test": "npm run build",
+    "clean": "node ./bin/tasks/clean",
+    "assemble": "node ./bin/tasks/assemble",
+    "sass": "node ./bin/tasks/sass",
+    "sassdoc": "sassdoc src/sass -d docs",
+    "serve": "browser-sync start --server --files build/css/*.css",
+    "images": "node ./bin/tasks/images",
+    "watch": "npm-watch",
+    "postinstall": "echo To start serving and watching run 'npm run dev'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/chriswburke/frontend-boilerplate"
+  },
+  "keywords": [
+    "sass",
+    "scss",
+    "styles",
+    "css",
+    "boilerplate"
+  ],
+  "author": "Chris W. Burke",
+  "license": "MIT",
+  "dependencies": {
+    "assemble": "^0.16.2",
+    "autoprefixer": "^6.3.7",
+    "browser-sync": "^2.13.0",
+    "copy": "^0.3.0",
+    "copyfiles": "^1.0.0",
+    "cssnano": "^3.7.3",
+    "fs-extra": "^0.30.0",
+    "handlebars-helpers": "^0.7.3",
+    "imagemin": "^5.2.2",
+    "imagemin-gifsicle": "^5.1.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-optipng": "^5.1.1",
+    "imagemin-pngquant": "^5.0.0",
+    "imagemin-svgo": "^5.1.0",
+    "map-stream": "0.0.6",
+    "node-sass": "^3.8.0",
+    "npm-watch": "^0.1.5",
+    "onchange": "^2.5.0",
+    "plur": "^2.1.2",
+    "postcss": "^5.1.1",
+    "postcss-cli": "^2.5.2",
+    "pretty-bytes": "^3.0.1",
+    "rimraf": "^2.5.4",
+    "sass-lint": "^1.8.2",
+    "sassdoc": "^2.1.20",
+    "superstatic": "^4.0.3",
+    "through2-concurrent": "^1.1.1",
+    "vinyl-fs": "^2.4.3"
+  }
+}
