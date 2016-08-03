@@ -1,5 +1,6 @@
 const fs = require( 'fs-extra' );
-const chalk = require( 'chalk' )
+const chalk = require( 'chalk' );
+const sassImport = require( 'node-sass-import' );
 const sass = require( 'node-sass' );
 
 sass.render( {
@@ -7,7 +8,8 @@ sass.render( {
     outFile: './build/main.css',
     //includePaths: [ 'lib/', 'mod/' ],
     outputStyle: 'compressed',
-    sourceMap: true
+    sourceMap: true,
+    importer: sassImport
 }, ( error, result ) => {
     if ( error ) {
         console.log( chalk.white.bgRed.bold( 'Sass Compliation' ) );
