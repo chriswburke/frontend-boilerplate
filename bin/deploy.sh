@@ -6,9 +6,12 @@ fi
 
 if ! git diff-index --quiet HEAD --; then
     echo "Unable to deploy!"
+    echo "----------------------------------------------"
 	echo "There are uncommited changes on this repository."
     echo "Please commit your changes and try again."
 	exit 1
 else
+    echo "Starting deployment from branch $currentbranch"
+    echo "----------------------------------------------"
     git push dev $currentbranch:master
 fi
