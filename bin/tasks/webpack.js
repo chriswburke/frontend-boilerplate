@@ -1,4 +1,5 @@
 const path = require( 'path' );
+const chalk = require( 'chalk' );
 const webpack = require( 'webpack' );
 const buildenv = process.argv[ 2 ];
 const config = {
@@ -45,6 +46,7 @@ const compiler = webpack( buildenv === 'production' ? config.production : config
 compiler.run( ( err, stats ) => {
     if ( err ) {
         console.log( 'webpack:build', err );
+        console.log( chalk.white.bgGreen.bold( 'Webpack JS Compliation Complete!' ) );
     }
     console.log( '[webpack:build]', stats.toString( {
         chunks: true,
