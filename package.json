@@ -25,6 +25,7 @@
     "sassdoc": "sassdoc src/sass -d docs",
     "serve": "node ./bin/tasks/serve",
     "images": "node ./bin/tasks/images",
+    "iconfont": "node ./bin/tasks/iconfont",
     "webpack": "node ./bin/tasks/webpack",
     "watch": "npm-watch",
     "preinstall": "./bin/setup.sh",

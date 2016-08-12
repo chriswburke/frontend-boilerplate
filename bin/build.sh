@@ -22,6 +22,11 @@ echo -e "-------------------------\033[0m"
 npm run sass $BUILDENV
 
 echo
+echo -e "\033[1m=> Iconfont"
+echo -e "-------------------------\033[0m"
+npm run iconfont $BUILDENV
+
+echo
 echo -e "\033[1m=> Webpack"
 echo -e "-------------------------\033[0m"
 npm run webpack $BUILDENV
