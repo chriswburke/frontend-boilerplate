@@ -12,7 +12,7 @@ const serverOptions = {
             //     destination: '/index.html'
             // } ]
     },
-    errorPage: './build/error.html',
+    //errorPage: './build/error.html',
     port: process.env.PORT || 9000,
     debug: false,
     gzip: true
