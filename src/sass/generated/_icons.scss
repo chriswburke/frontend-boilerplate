@@ -1,0 +1,30 @@
+@font-face {
+	font-family: "frontend-boilerplate";
+	src: url("frontend-boilerplate.woff?fbf0d430dd38765b1581f2179a0dcc8a") format("woff"),
+url("frontend-boilerplate.ttf?fbf0d430dd38765b1581f2179a0dcc8a") format("truetype"),
+url("frontend-boilerplate.svg?fbf0d430dd38765b1581f2179a0dcc8a#frontend-boilerplate") format("svg");
+}
+
+.icon {
+	line-height: 1;
+}
+
+.icon:before {
+	font-family: frontend-boilerplate !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+
+.icon-carat-down:before {
+	content: "\f101";
+}
+.icon-carat-left:before {
+	content: "\f102";
+}
+.icon-carat-right:before {
+	content: "\f103";
+}
+.icon-carat-up:before {
+	content: "\f104";
+}
