@@ -1,30 +1,30 @@
 @font-face {
 	font-family: "frontend-boilerplate";
-	src: url("frontend-boilerplate.woff?fbf0d430dd38765b1581f2179a0dcc8a") format("woff"),
-url("frontend-boilerplate.ttf?fbf0d430dd38765b1581f2179a0dcc8a") format("truetype"),
-url("frontend-boilerplate.svg?fbf0d430dd38765b1581f2179a0dcc8a#frontend-boilerplate") format("svg");
+	src: url("frontend-boilerplate.woff?2eba1f70b85850cd60bf40572e548b1c") format("woff"),
+url("frontend-boilerplate.ttf?2eba1f70b85850cd60bf40572e548b1c") format("truetype"),
+url("frontend-boilerplate.svg?2eba1f70b85850cd60bf40572e548b1c#frontend-boilerplate") format("svg");
 }
 
-.icon {
+@if not variable-exists('webfont-icons') {
+	$webfont-icons: () !global;
+}
+
+$webfont-icons: map-merge($webfont-icons, (
+		'carat-down': ('frontend-boilerplate' 'f101'),
+		'carat-left': ('frontend-boilerplate' 'f102'),
+		'carat-right': ('frontend-boilerplate' 'f103'),
+		'carat-up': ('frontend-boilerplate' 'f104'),
+));
+
+@mixin webfont-icon($name) {
 	line-height: 1;
-}
 
-.icon:before {
-	font-family: frontend-boilerplate !important;
-	font-style: normal;
-	font-weight: normal !important;
-	vertical-align: top;
-}
-
-.icon-carat-down:before {
-	content: "\f101";
-}
-.icon-carat-left:before {
-	content: "\f102";
-}
-.icon-carat-right:before {
-	content: "\f103";
-}
-.icon-carat-up:before {
-	content: "\f104";
+	$icon: map-get($webfont-icons, $name);
+	&:before {
+		font-family: nth($icon, 1) !important;
+		font-style: normal;
+		font-weight: normal !important;
+		vertical-align: top;
+		content: str-slice('\x', 1, 1) + nth($icon, 2);
+	}
 }
