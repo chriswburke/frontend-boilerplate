@@ -28,7 +28,7 @@
     "webpack": "node ./bin/tasks/webpack",
     "watch": "npm-watch",
     "preinstall": "./bin/setup.sh",
-    "postinstall": "&& npm run build:production",
+    "postinstall": "npm run build:production",
     "start": "node ./bin/tasks/serve",
     "deploy": "./bin/deploy.sh dev || true",
     "deploy:qa": "./bin/deploy.sh qa || true",
